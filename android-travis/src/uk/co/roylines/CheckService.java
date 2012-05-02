@@ -1,20 +1,20 @@
 package uk.co.roylines;
 
-import android.app.Service;
+import roboguice.service.RoboService;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-public class Poller extends Service {
+public class CheckService extends RoboService{
 
-	private final String LOGTAG = "Travis: Poller";
+	private final static String TAG = "Travis CheckService";
 	
 	@Override
 	public void onStart(Intent intent, int startId) {
-		Log.i(LOGTAG, "Poller: onStart");
+		Log.i(TAG, "onStart");
 		super.onStart(intent, startId);
 		
-		Log.i(LOGTAG, "Poller: stopping self");
+		Log.i(TAG, "stopping");
 		stopSelf();
 	}
 
